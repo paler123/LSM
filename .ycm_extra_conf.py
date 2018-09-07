@@ -77,22 +77,20 @@ def GetCompilationInfoForFile( filename ):
   # for header files. So we do our best by asking the db for flags for a
   # corresponding source file, if any. If one exists, the flags for that file
   # should be good enough.
-  with open('log', 'w') as f:
-    f.write(filename + "\n")
-    if IsHeaderFile( filename ):
-        base_dir = find_matching_source_dir(filename)
-        f.write(base_dir + "\n")
-        file_without_ext = os.path.splitext(os.path.basename(filename))[0]
-        f.write(file_without_ext + "\n")
-        for extension in SOURCE_EXTENSIONS:
-          replacement_file = os.path.join(base_dir, file_without_ext + extension)
-          f.write(replacement_file + "\n")
-          if os.path.exists( replacement_file ):
-            compilation_info = database.GetCompilationInfoForFile(
-              replacement_file )
-            if compilation_info.compiler_flags_:
-              return compilation_info
-        return None
+  if IsHeaderFile( filename ):
+      base_dir = find_matching_source_dir(filename)
+      f.write(base_dir + "\n")
+      file_without_ext = os.path.splitext(os.path.basename(filename))[0]
+      f.write(file_without_ext + "\n")
+      for extension in SOURCE_EXTENSIONS:
+        replacement_file = os.path.join(base_dir, file_without_ext + extension)
+        f.write(replacement_file + "\n")
+        if os.path.exists( replacement_file ):
+          compilation_info = database.GetCompilationInfoForFile(
+            replacement_file )
+          if compilation_info.compiler_flags_:
+            return compilation_info
+      return None
   return database.GetCompilationInfoForFile( filename )
 
 # returns union of compilation db flags for file + default ones

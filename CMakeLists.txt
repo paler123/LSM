@@ -5,6 +5,9 @@ enable_testing()
 include(cmake/warnings.cmake)
 include(cmake/boost.cmake)
 include(cmake/gmock.cmake)
+
+find_package(Eigen3 REQUIRED NO_MODULE)
+
 if(USE_YCM) 
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE BOOL "to export compile commands" FORCE)
 endif()
