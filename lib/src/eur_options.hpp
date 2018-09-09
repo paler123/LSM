@@ -1,14 +1,20 @@
 #pragma once
 
 #include "option_types.hpp"
+#include "Model.hpp"
+#include "OptionEvaluation.hpp"
 
-namespace options
+namespace lsm::options
 {
 
 template <Types type>
 struct EurOption
 {
 
+    OptionEvaluation eval(const models::RawModel&)
+    {
+        return {};
+    }
     double payoffAtExpiry(double assetPrice)
     {
         if constexpr (type == Types::call)

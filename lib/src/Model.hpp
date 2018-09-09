@@ -3,8 +3,13 @@
 #include<vector>
 #include<Eigen/Dense>
 
-namespace lsm
+namespace lsm::models
 {
+    struct RawModel 
+    {
+        std::vector<double> times;
+        std::vector<Eigen::MatrixXd> assets;
+    };
     /*
      *   Simple market model for lsm pricing.
      *   Specified by providing:

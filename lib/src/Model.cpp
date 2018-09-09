@@ -16,7 +16,7 @@ std::vector<double> get_equidistant_times(double expiry, int steps)
 }
 
 
-namespace lsm
+namespace lsm::models
 {
 
 SimpleModel::SimpleModel(double expiry, int steps)

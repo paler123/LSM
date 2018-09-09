@@ -3,7 +3,7 @@
 
 namespace
 {
-using namespace lsm;
+using namespace lsm::models;
 
 TEST(SimpleModel, properly_initializes_times)
 {

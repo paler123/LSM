@@ -1,4 +1,5 @@
 add_library(lsm_lib
+   src/option_types.cpp
    src/Model.cpp
    src/OptionEvaluation.cpp
    src/eur_options.cpp) 
