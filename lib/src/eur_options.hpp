@@ -8,6 +8,7 @@ namespace options
 template <Types type>
 struct EurOption
 {
+
     double payoffAtExpiry(double assetPrice)
     {
         if constexpr (type == Types::call)

@@ -3,6 +3,7 @@ import ycm_core
 
 # list of include flags obtained by running: echo | clang -E -v -x c++ -
 flags = [
+    '-isystem/usr/local/include/c++/8.1.0',
     '-isystem/usr/lib/gcc/x86_64-linux-gnu/7.3.0/../../../../include/c++/7.3.0',
     '-isystem/usr/lib/gcc/x86_64-linux-gnu/7.3.0/../../../../include/x86_64-linux-gnu/c++/7.3.0',
     '-isystem/usr/lib/gcc/x86_64-linux-gnu/7.3.0/../../../../include/c++/7.3.0/backward',
@@ -79,12 +80,9 @@ def GetCompilationInfoForFile( filename ):
   # should be good enough.
   if IsHeaderFile( filename ):
       base_dir = find_matching_source_dir(filename)
-      f.write(base_dir + "\n")
       file_without_ext = os.path.splitext(os.path.basename(filename))[0]
-      f.write(file_without_ext + "\n")
       for extension in SOURCE_EXTENSIONS:
         replacement_file = os.path.join(base_dir, file_without_ext + extension)
-        f.write(replacement_file + "\n")
         if os.path.exists( replacement_file ):
           compilation_info = database.GetCompilationInfoForFile(
             replacement_file )
