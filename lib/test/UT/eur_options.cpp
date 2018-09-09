@@ -1,10 +1,12 @@
 #include "eur_options.hpp"
 #include "Model.hpp"
-#include <gtest/gtest.h>
+#include "Comparators.hpp"
+#include <gmock/gmock.h>
 #include <vector>
 
 using namespace lsm::options;
 using namespace lsm::models;
+using namespace lsm::testing;
 
 namespace
 {
@@ -34,7 +36,7 @@ TEST(eur_options, properly_evaluates_payoff_on_trajectories)
     expected_payoffs << 0.0, 0.0, 0.0, 0.0, 1.0;
     auto expected_eval = OptionEvaluation{std::move(expected_payoffs), {}};
     auto option_evaluation = call_option.eval(model);
-    ASSERT_EQ(option_evaluation, expected_eval);    
+    assert_evaluation_equality(expected_eval, option_evaluation);    
 }
 
 }

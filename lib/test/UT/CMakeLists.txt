@@ -7,6 +7,7 @@ target_include_directories(lsm_ut PUBLIC
 
 target_link_libraries(lsm_ut 
     lsm_lib 
+    testing_framework
     gmock 
     gtest_main)
 
