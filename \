@@ -1,0 +1,7 @@
+lsm_ut_sources = ['model.cpp', 'eur_options.cpp'] 
+
+lms_test_exe = ('lsm_ut', 
+                lsm_ut_sources,
+                include_directories : inc,
+                link_with : test_framework)
+                
