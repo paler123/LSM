@@ -1,6 +1,7 @@
 lsm_sources = ['option_types.cpp',
                'Model.cpp',
                'OptionEvaluation.cpp',
+               'RegressionEngine.cpp',
                'eur_options.cpp']
 
 lsm_lib = shared_library(
