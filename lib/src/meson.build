@@ -11,3 +11,7 @@ lsm_lib = shared_library(
                dependencies : eigen_dep,
                install : true)
 
+lsm_dep = declare_dependency(
+    link_with : lsm_lib,
+    include_directories : lsm_headers,
+    dependencies : eigen_dep)
