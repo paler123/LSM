@@ -13,7 +13,7 @@ struct DiscardCoefficients {
 };
 
 struct StoreCoefficients {
-    StoreCoefficients(std::vector<VectorXd>& storage) : storage{storage} {}
+    StoreCoefficients(std::vector<VectorXd>& sink) : storage{sink} {}
     void add(VectorXd&& cur_coefficients) {
         storage.emplace_back(std::move(cur_coefficients));
     }
