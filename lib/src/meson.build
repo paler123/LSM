@@ -2,6 +2,7 @@ lsm_sources = ['option_types.cpp',
                'Model.cpp',
                'OptionEvaluation.cpp',
                'RegressionEngine.cpp',
+               'PolynomialWalk.cpp',
                'eur_options.cpp']
 
 

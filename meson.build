@@ -34,7 +34,7 @@ endif
 
 gtest_dep = dependency('gtest', main : true)
 gmock_dep = dependency('gmock')
-eigen_dep = dependency('Eigen3', modules : ['Eigen3::Eigen'], default_options : ['is_system=true'])
+eigen_dep = dependency('Eigen3', modules : ['Eigen3::Eigen'])
 boost_dep = dependency('boost')
 
 subdir('lib')

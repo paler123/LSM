@@ -1,4 +1,6 @@
-framework_sources = ['Comparators.cpp']
+framework_sources = [
+    'Comparators.cpp'
+]
 
 testing_framework_headers = include_directories('.')
 
