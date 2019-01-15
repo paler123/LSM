@@ -3,7 +3,5 @@
 
 ## Prerequisites
 - working c++ compiler
-- git (for retrieving gmock)
-- sufficiently new (>= 3.0 is good enough) cmake
-- Eigen3 installed in a way that cmake's find_package can pick it up
-- boost, installed in a way that cmake can find it by default 
+- Eigen and gmock installed in a way that CMake can find them by find_package
+- meson
