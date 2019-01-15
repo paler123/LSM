@@ -2,12 +2,9 @@
 
 #include "OptionEvaluation.hpp"
 
-namespace lsm::testing
-{
+namespace lsm::testing {
 
-void assert_evaluation_equality(
-        const options::OptionEvaluation& expected,
-        const options::OptionEvaluation& actual,
-        double precision = 1e-6);
-
+void assert_evaluation_equality(const options::OptionEvaluation& expected,
+                                const options::OptionEvaluation& actual,
+                                double precision = 1e-6);
 }

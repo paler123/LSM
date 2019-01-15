@@ -3,5 +3,4 @@
 
 using namespace lsm::regression_base;
 
-namespace {
-}
+namespace {}

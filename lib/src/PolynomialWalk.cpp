@@ -1,6 +1,3 @@
 #include "PolynomialWalk.hpp"
 
-namespace lsm::regression_base {
-
-}
-
+namespace lsm::regression_base {}

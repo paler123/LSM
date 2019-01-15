@@ -3,11 +3,9 @@
 #include <Eigen/Dense>
 #include <optional>
 
-namespace lsm::options
-{
-struct OptionEvaluation
-{
+namespace lsm::options {
+struct OptionEvaluation {
     Eigen::MatrixXd values;
-    std::optional<std::vector<Eigen::MatrixXd>> model_enhancements;  
-}; 
-}
+    std::optional<std::vector<Eigen::MatrixXd>> model_enhancements;
+};
+} // namespace lsm::options

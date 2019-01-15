@@ -1,6 +1,5 @@
 #pragma once
 
-namespace lsm::options
-{
+namespace lsm::options {
 enum class Types { call, put };
 }
