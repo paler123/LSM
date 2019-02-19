@@ -7,7 +7,7 @@ warnings = [
     '-Werror',
     '-Wall',
     '-Wextra', 
-    '-Wshadow', 
+#    '-Wshadow', 
     '-Wnon-virtual-dtor', 
     '-Wcast-align', 
     '-Wunused', 
@@ -32,9 +32,9 @@ if cxx.get_argument_syntax() == 'gcc'
     endforeach
 endif
 
-gtest_dep = dependency('gtest', main : true)
-gmock_dep = dependency('gmock')
-eigen_dep = dependency('Eigen3', modules : ['Eigen3::Eigen'])
+gmock_dep = dependency('gmock', main : false, fallback : ['gtest', 'gmock_dep'])
+gmock_main_dep = dependency('gmock', main : true, fallback : ['gtest', 'gmock_main_dep'])
+eigen_dep = dependency('Eigen3', modules : ['Eigen3::Eigen'], fallback : ['eigen', 'eigen_dep'])
 boost_dep = dependency('boost')
 
 subdir('lib')

@@ -9,7 +9,7 @@ lsm_test_exe = executable(
     'lsm_ut', 
     lsm_ut_sources,
     include_directories : [lsm_private_includes],
-    dependencies : [lsm_testing_dep]
+    dependencies : [lsm_dep, gmock_main_dep]
 )
 
 

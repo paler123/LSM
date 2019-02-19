@@ -1,2 +1,4 @@
 build*
 *.swp
+subprojects/*
+!subprojects/*.wrap
